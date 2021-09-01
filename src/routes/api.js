@@ -15,7 +15,7 @@ router.post('/interest/update/:id',apiController.update);
 router.get('/interest/delete/:id',apiController.delete);
 
 
-//USERS
+//USERS 
 router.post('/user',usersController.create);
 router.get('/user/:name',usersController.read);
 router.get('/users',usersController.readAll);
