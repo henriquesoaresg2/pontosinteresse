@@ -26,3 +26,27 @@ exports.update = (req, res, next) => {
 exports.delete = (req, res, next) => {
     User.findByIdAndDelete({_id: req.params.id}).then((user)=>res.send(user)).catch(next);
 };
+
+exports.usersList = (req, res, next) => {
+    User.find()
+    .then((user)=>{
+        res.render('pages/usersTemplate', {page:"../partials/usersList", users: user});
+    })
+    .catch(next);
+};
+
+exports.userCreate = (req, res, next) => {
+    User.find()
+    .then((user)=>{
+        res.render('pages/usersTemplate', {page:"../partials/userCreate", users: user});
+    })
+    .catch(next);
+};
+
+exports.userLogin = (req, res, next) => {
+    User.find()
+    .then((user)=>{
+        res.render('pages/usersTemplate', {page:"../partials/userLogin", users: user});
+    })
+    .catch(next);
+};

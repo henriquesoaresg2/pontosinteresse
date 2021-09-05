@@ -1,17 +1,20 @@
-<table border="1">    
-    <tr>
-        <td>Login</td>
-        <td><input type="text"></td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td><input type="password"></td>
-    </tr>
-    <tr>
-        <td><a href="#">Esqueceu a senha?</a></td>
-    </tr>
-    <tr>
-        <td><a href="#">Entrar</a></td>
-        <td><a href="#">Cadastrar-se</a></td>
-    </tr>
-</table>
+<form action="/api/user" method="post">
+    <table>    
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Login</td>
+            <td><input type="text" name="login"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><a href="/api/userLogin">Cancelar</a></td>
+            <td><input type="submit" value="Cadastrar"></td>
+        </tr>
+    </table>
+</form>

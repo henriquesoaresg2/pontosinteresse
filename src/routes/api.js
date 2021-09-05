@@ -26,5 +26,8 @@ router.get('/user/delete/:id',usersController.delete);
 //VIEWS
 router.get('/createPI', apiController.createPI);
 router.get('/listAll', apiController.listAllPIs);
+router.get('/usersList', usersController.usersList);
+router.get('/userCreate', usersController.userCreate);
+router.get('/userLogin', usersController.userLogin);
 
 module.exports = router;
