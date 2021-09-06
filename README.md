@@ -12,3 +12,5 @@ Um Projeto para treino e aprendizagem feito em NodeJS, utilizando Express, EJS e
 - [ ] Deletar usuários;
 - [ ] Implementar JWT;
 - [ ] Implementar regras de usuários no CRUD de PI e Users;
+
+Futuras implementações aparecerão aqui a medida que eu tiver idéias...
