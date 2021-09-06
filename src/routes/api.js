@@ -24,10 +24,11 @@ router.get('/user/delete/:id',usersController.delete);
 
 
 //VIEWS
+router.get('/home', (req, res)=>res.render('pages/menuPage', {page: '../partials/home'}));
 router.get('/createPI', apiController.createPI);
 router.get('/listAll', apiController.listAllPIs);
 router.get('/usersList', usersController.usersList);
 router.get('/userCreate', usersController.userCreate);
-router.get('/userLogin', usersController.userLogin);
+router.get('/userEdit/:id', usersController.userEdit);
 
 module.exports = router;

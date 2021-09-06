@@ -37,7 +37,7 @@ app.use((err, req, res, next)=>{
 });
 
 app.get('/', function(req,res){
-    res.render('pages/PItemplate');
+    res.render('pages/noMenuPage', {page: '../partials/userLogin'});
 });
 
 // 'process.env.port': caso usemos Heroku

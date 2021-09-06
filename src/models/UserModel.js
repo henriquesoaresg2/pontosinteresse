@@ -15,6 +15,10 @@ const UserSchema = new Schema({
         type:String,
         default:null
     },
+    permissions:{
+        type:Array,
+        default:[null, 'read', null, null]
+    },
     status:{
         type:Boolean,
         default:true

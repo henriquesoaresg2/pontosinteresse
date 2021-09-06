@@ -1,0 +1,22 @@
+<div class="container">
+    <form action="/api/user/update/<%= user._id %> " method="post">
+        <table>    
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name" name="name" value="<%= user.name %> "></td>
+            </tr>
+            <tr>
+                <td>Login</td>
+                <td><input type="text" name="login" value="<%= user.login %>" disabled></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" value="<%= user.password %>"></td>
+            </tr>
+            <tr>
+                <td><a href="/api/usersList">Cancelar</a></td>
+                <td><input type="submit" value="Alterar"></td>
+            </tr>
+        </table>
+    </form>
+</div>

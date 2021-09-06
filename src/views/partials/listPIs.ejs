@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="header points">
+        <div class="col">Name</div>
+        <div class="col">Details</div>
+        <div class="col">Actions</div>
+    </div>
+    <div class="data-list points">
+        <% pis.forEach(pi => { %>
+            <div class="row">
+                <div class="col"><%= pi.name %></div>
+                <div class="col"><%= pi.details %></div>
+                <div class="col">
+                    <a href="/api/interest/delete/<%= pi._id %>"><button class="delete pc">Delete</button></a>                        
+                </div>
+                <div class="col">
+                    <button class="delete mobile">Delete</button>
+                    <button>Edit</button>
+                </div>
+            </div>            
+        <% }) %>
+    </div>
+</div>

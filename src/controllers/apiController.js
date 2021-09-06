@@ -11,7 +11,6 @@ exports.create = function(req, res, next){
         details: req.body.details || undefined
     };
     
-    console.log('You made a POST request: ', data);
     PI.create(data)
     .then(res.redirect('/api/listAll'))
     .catch(next);
@@ -19,7 +18,6 @@ exports.create = function(req, res, next){
 
 // TODO: adicionar novo ponto de interesse
 exports.read = function (req, res, next) {
-    console.log('You made a GET request: ', req.params.id);
     PI.findById(req.params.id)
     .then((pi)=>res.send(pi))
     .catch(next);
@@ -27,7 +25,6 @@ exports.read = function (req, res, next) {
 
 // TODO: atualizar ponto de interesse
 exports.update = function (req, res, next) {
-    console.log('You made a PUT request: ', req.params.id, '\n and your body was: ', req.body);
     PI.findByIdAndUpdate(req.params.id, req.body)
     .then(()=>{
         PI.findOne({_id: req.params.id}).then((pi)=>res.send(pi));
@@ -37,7 +34,6 @@ exports.update = function (req, res, next) {
 
 // TODO: apagar ponto de interesse
 exports.delete = function (req, res, next) {
-    console.log('You made a DELETE request: ', req.params.id);
     PI.findByIdAndRemove({_id: req.params.id})
     .then(
         // (pi)=>res.send(pi)
@@ -47,10 +43,9 @@ exports.delete = function (req, res, next) {
 };
 
 exports.listAllPIs = (req, res, next)=>{
-    console.log('Redirecionando para a listagem com prazer!');
     PI.find()
-    .then((pi)=>res.render('listPIs', {pis:pi}))
+    .then((pi)=>res.render('pages/menuPage', {page:'../partials/listPIs', pis:pi}))
     .catch(next);
 }
 
-exports.createPI = (req, res, next) => res.render('createPI');
+exports.createPI = (req, res, next) => res.render('pages/menuPage', {page:'../partials/createPI'});

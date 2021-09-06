@@ -27,26 +27,23 @@ exports.delete = (req, res, next) => {
     User.findByIdAndDelete({_id: req.params.id}).then((user)=>res.send(user)).catch(next);
 };
 
+//CHAMADA DE PAGINAS
+exports.userCreate = (req, res, next) => {
+    res.render('pages/menuPage', {page:"../partials/userCreate"});
+};
+
 exports.usersList = (req, res, next) => {
     User.find()
     .then((user)=>{
-        res.render('pages/usersTemplate', {page:"../partials/usersList", users: user});
+        res.render('pages/menuPage', {page:"../partials/usersList", users: user});
     })
     .catch(next);
 };
 
-exports.userCreate = (req, res, next) => {
-    User.find()
+exports.userEdit = (req, res, next) => {
+    User.findById({_id: req.params.id})
     .then((user)=>{
-        res.render('pages/usersTemplate', {page:"../partials/userCreate", users: user});
-    })
-    .catch(next);
-};
-
-exports.userLogin = (req, res, next) => {
-    User.find()
-    .then((user)=>{
-        res.render('pages/usersTemplate', {page:"../partials/userLogin", users: user});
+        res.render('pages/menuPage', {page:"../partials/userEdit", user: user});
     })
     .catch(next);
 };

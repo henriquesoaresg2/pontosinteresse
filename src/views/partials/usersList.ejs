@@ -1,19 +1,20 @@
-<table>
-    <tr>
-        <th>Login</th>
-        <th>Senha</th>
-        <th></th>
-        <th></th>
-    </tr>
+<div class="container">
+    <table>
+        <tr>
+            <th>Login</th>
+            <th>Senha</th>
+            <th colspan="2"></th>
+        </tr>
+        
+        <% users.forEach(user => { %>
+        
+        <tr>
+            <td><%= user.login %></td>
+            <td><%= user.password %></td>
+            <td><a href="/api/userEdit/<%= user._id %>">Editar</a></td>
+            <td><a href="/api/userDelete/<%= user._id %>">Excluir</a></td>
+        </tr>
     
-    <% users.forEach(user => { %>
-    
-    <tr>
-        <td><%= user.login %></td>
-        <td><%= user.password %></td>
-        <td><a href="#">editar</a></td>
-        <td><a href="#">excluir</a></td>
-    </tr>
-
-    <% }) %> 
-</table>
+        <% }) %> 
+    </table>
+</div>
